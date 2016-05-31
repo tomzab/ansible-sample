@@ -1,0 +1,5 @@
+[production]
+[HOST] ansible_ssh_user=ubuntu
+
+[staging]
+[HOST] ansible_ssh_user=ubuntu

@@ -1,0 +1,17 @@
+- hosts: production
+
+  tasks:
+
+  - name: Clone git repo
+    git: >
+      dest=[DEST_DIR]
+      repo=[REPO_URL]
+      update=yes
+
+  - name: Install composer dependencies
+    composer: >
+      command=install
+      working_dir=[WORKING_DIR]
+
+  - name: Setting file permissions
+    command: bash -lc "cd [DEST_DIR] && ./setup.sh"
